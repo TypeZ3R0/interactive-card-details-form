@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- displays site properly based on user's device -->
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+		rel="stylesheet">
+
+	<link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+
+	<link rel="stylesheet" href="style.css">
+
+	<title>Frontend Mentor | Interactive card details form</title>
+
+	<!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+	<style>
+		.attribution {
+			font-size: 11px;
+			text-align: center;
+			display: none;
+		}
+
+		.attribution a {
+			color: hsl(228, 45%, 44%);
+		}
+	</style>
+</head>
+
+<body>
+
+	<main>
+		<img src="./images/bg-main-desktop.png" alt="" class="bg-main-desktop">
+		<img src="./images/bg-main-mobile.png" alt="" class="bg-main-mobile">
+		<img src="./images/bg-card-front.png" alt=""  class="bg-card-front">
+		<img src="./images/bg-card-back.png" alt="" class="bg-card-back">
+		<section class="card-area">
+
+			<div class="card">
+				<form class="card-form" action="" method="POST">
+					<div class="card-input-divs">
+						<label for="">CARDHOLDER NAME</label>
+						<input type="text" name="cardHolderName" id="cardholder-name" class="card-input">
+					</div>
+					<div class="card-input-divs" id="card-number-div">
+						<label for="">CARD NUMBER</label>
+						<input type="text" name="cardNumber" id="card-number" class="card-input">
+					</div>
+					<div class="card-input-divs">
+						<label for="">EXP. DATE (MM/YY)</label>
+						<div>
+							<input type="text" name="expMonth" id="exp-month" class="card-input">
+							<input type="text" name="expYear" id="exp-year" class="card-input">
+						</div>
+					</div>
+					<div class="card-input-divs" id="cvc-div">
+						<label for="">CVC</label>
+						<input type="text" name="cvcNumber" id="cvc" class="card-input">
+					</div>
+					<button type="button" class="submit-btn">CONTINUE</button>
+				</form>
+			</div>
+
+		</section>
+	</main>
+
+	<script type="text/javascript" src="main.js"></script>
+
+</body>
+
+</html>
