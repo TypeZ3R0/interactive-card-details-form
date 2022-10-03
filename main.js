@@ -27,38 +27,17 @@ cardNumber.addEventListener("input", (e) => {
 })
 
 // Create an error message
-const createError = (error, input) => {
-    switch (error) {
-        case "blank_input":
-                const blankInputError = document.createElement("h6");
-                blankInputError.textContent = "Can't be blank";
-                blankInputError.style.color = "red";
-                input.parentElement.appendChild(blankInputError);
-            break;
-
-        case "invalid_no":
-                const invalidCardError = document.createElement("h6");
-                invalidCardError.textContent = "Invalid number";
-                invalidCardError.style.color = "red";
-                input.parentElement.appendChild(invalidCardError);
-            break;
-
-        case "check_letters":
-                const lettersError = document.createElement("h6");
-                lettersError.textContent = "Wrong format, numbers only.";
-                lettersError.style.color = "red";
-                input.parentElement.appendChild(lettersError);
-            break;
-
-        default:
-            break;
-    }
+const createError = (errorMessage, input) => {
+    const error = document.createElement("h6");
+    error.textContent = errorMessage;
+    error.style.color = "red";
+    input.parentElement.appendChild(error);
 }
 
 // Check for blank input
 const checkForBlankInput = (input) => {
     if(input.value === "") {
-        createError("blank_input", input);
+        createError("Can't be blank", input);
     }
     else {
         return false;
@@ -68,10 +47,10 @@ const checkForBlankInput = (input) => {
 // Check for valid card number
 const checkForValidNo = (input, inputField) => {
     if(input.value.length != 19 && input.value.length != 0 && inputField === "card_no") {
-        createError("invalid_no", input)
+        createError("Invalid number", input)
     }
     if(input.value.length != 3 && input.value.length != 0 && inputField === "cvc_no") {
-        createError("invalid_no", input)
+        createError("Invalid number", input)
     }
     else {
         return false
@@ -82,12 +61,13 @@ const checkForValidNo = (input, inputField) => {
 const checkForLetters = (input) => {
     let letters = /[a-zA-Z]+/g;
     if(input.value.match(letters)) {
-        createError("check_letters", input);
+        createError("Wrong format, numbers only.", input);
     }
     else {
         return false;
     }
 }
+
 // Validate expiry date input
 const expDurationValidation = (expMonth, expYear) => {
     if(expMonth.value === "" || expYear.value === "") {
@@ -136,13 +116,3 @@ submitBtn.addEventListener("click", () => {
 continueBtn.addEventListener("click", () => {
     window.location.reload();
 })
-
-
-
-
-/*
-    Aranyak Samui
-    4587 8965 8485 7752
-    11 25
-    456
-*/

@@ -38,6 +38,65 @@ main {
     position: absolute;
 }
 
+.circles {
+    height: 50px;
+    width: 87px;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 23.5%;
+    left: 15%;
+}
+
+.circle1 {
+    width: 50px;
+    height: 50px;
+    top: 23.5%;
+    left: 15%;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.circle2 {
+    width: 22px;
+    height: 22px;
+    top: 23.5%;
+    left: 20%;
+    border: 1.5px solid #fff;
+    border-radius: 50%;
+}
+
+.card-number-over-img {
+    position: absolute;
+    top: 37%;
+    left: 15%;
+    z-index: 2;
+    color: #fff;
+    letter-spacing: 0.08rem;
+    font-weight: 500;
+}
+
+.card-holder-over-img {
+    position: absolute;
+    top: 43.5%;
+    left: 15%;
+    z-index: 2;
+    color: #fff;
+    letter-spacing: 0.08rem;
+    font-weight: 300;
+}
+
+.dates-over-img {
+    position: absolute;
+    top: 43.5%;
+    left: 35%;
+    z-index: 2;
+    color: #fff;
+    letter-spacing: 0.08rem;
+    font-weight: 300;
+}
+
 .card-area {
     width: 100%;
     height: 100vh;
@@ -125,6 +184,7 @@ main {
     border-radius: 10px;
     font-family: 'Space Grotesk', sans-serif;
     font-size: 18px;
+    letter-spacing: 0.08rem;
 }
 
 .card-input:focus {
