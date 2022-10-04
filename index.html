@@ -41,9 +41,10 @@
 			<div class="circle1"></div>
 			<div class="circle2"></div>
 		</div>
-		<h2 class="card-number-over-img">4577 4758 4857 3743</h2>
-		<h4 class="card-holder-over-img">Aranyak Samui</h4>
-		<h4 class="dates-over-img">09/25</h4>
+		<h2 class="card-number-over-img">0000 0000 0000 0000</h2>
+		<h4 class="card-holder-over-img"></h4>
+		<h4 class="dates-over-img"><span class="exp-month-over-img">00</span>/<span class="exp-year-over-img">00</span></h4>
+		<h4 class="cvc-over-img">000</h4>
 		<img src="./images/bg-card-back.png" alt="" class="bg-card-back">
 		<section class="card-area">
 
@@ -57,22 +58,22 @@
 				<form class="card-form" action="" method="POST">
 					<div class="card-input-divs">
 						<label for="">CARDHOLDER NAME</label>
-						<input type="text" name="cardHolderName" id="cardholder-name" class="card-input">
+						<input type="text" name="cardHolderName" id="cardholder-name" class="card-input" placeholder="e.g Jon Doe">
 					</div>
 					<div class="card-input-divs" id="card-number-div">
 						<label for="">CARD NUMBER</label>
-						<input type="text" name="cardNumber" id="card-number" class="card-input">
+						<input type="text" name="cardNumber" id="card-number" class="card-input" placeholder="e.g 1234 5678 9123 0000">
 					</div>
 					<div class="card-input-divs">
 						<label for="">EXP. DATE (MM/YY)</label>
 						<div>
-							<input type="text" name="expMonth" id="exp-month" class="card-input">
-							<input type="text" name="expYear" id="exp-year" class="card-input">
+							<input type="text" name="expMonth" id="exp-month" class="card-input" placeholder="MM">
+							<input type="text" name="expYear" id="exp-year" class="card-input" placeholder="YY">
 						</div>
 					</div>
 					<div class="card-input-divs" id="cvc-div">
 						<label for="">CVC</label>
-						<input type="text" name="cvcNumber" id="cvc" class="card-input">
+						<input type="text" name="cvcNumber" id="cvc" class="card-input" placeholder="e.g 123">
 					</div>
 					<button type="button" class="submit-btn">CONTINUE</button>
 				</form>

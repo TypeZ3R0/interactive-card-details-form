@@ -8,6 +8,12 @@ const expMonth = document.querySelector("#exp-month");
 const expYear = document.querySelector("#exp-year");
 const cvcNo = document.querySelector("#cvc");
 
+const cardImgNumber = document.querySelector(".card-number-over-img");
+const cardImgHolderName = document.querySelector(".card-holder-over-img");
+const cardImgMonth = document.querySelector(".exp-month-over-img");
+const cardImgYear = document.querySelector(".exp-year-over-img");
+const cardImgCvc = document.querySelector(".cvc-over-img");
+
 const submitBtn = document.querySelector(".submit-btn");
 const continueBtn = document.querySelector("#continue-btn");
 
@@ -21,9 +27,26 @@ const getTwoDigitYearForm = () => {
     return Number(stringYear);
 }
 
-// Add a space after every 4th character in card number input
+// Add a space after every 4th character in card number input and update the credit card image with real time value inputs
 cardNumber.addEventListener("input", (e) => {
     e.target.value = e.target.value.replace(/[^\dA-Z|a-z]/g, '').replace(/(.{4})/g, '$1 ').trim();
+    cardImgNumber.textContent = e.target.value;
+})
+
+cardHolderName.addEventListener("input", (e) => {
+    cardImgHolderName.textContent = e.target.value.toUpperCase();
+})
+
+expMonth.addEventListener("input", (e) => {
+    cardImgMonth.textContent = e.target.value;
+})
+
+expYear.addEventListener("input", (e) => {
+    cardImgYear.textContent = e.target.value;
+})
+
+cvcNo.addEventListener("input", (e) => {
+    cardImgCvc.textContent = e.target.value;
 })
 
 // Create an error message
@@ -31,6 +54,7 @@ const createError = (errorMessage, input) => {
     const error = document.createElement("h6");
     error.textContent = errorMessage;
     error.style.color = "red";
+    input.style.borderColor = "red";
     input.parentElement.appendChild(error);
 }
 
@@ -105,7 +129,7 @@ const validate = (checks) => {
 }
 
 // Submit button behaviour
-submitBtn.addEventListener("click", () => {
+submitBtn.addEventListener("click", (e) => {
     if(validate(validationChecks) === 4) {
         cardForm.classList.add("hide");
         completeState.classList.remove("hide")
